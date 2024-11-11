@@ -1,0 +1,243 @@
+:root {
+    --color-1: rgb(74, 138, 72);
+    --color-2: rgb(27, 46, 21);
+    --color-3: rgb(207, 248, 209);
+}
+
+/* Base Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* box-sizing and font-sizing */
+
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+    /* set font-size to 10px = 62.5% */
+    font-size: 62.5%;
+}
+
+/* 1200px / 16px = 75em */
+@media (max-width: 75em) {
+    html {
+      font-size: 60%;
+    }
+}
+  
+/* 980px / 16px = 61.25em */
+@media (max-width: 61.25em) {
+    html {
+      font-size: 58%;
+    }
+}
+  
+/* 460px / 16px = 28.75em */
+@media (max-width: 28.75em) {
+    html {
+      font-size: 55%;
+    }
+}
+
+/* for more information about font-size check  https://personal-portfolio.freecodecamp.rocks/ */
+
+/* Base styles */
+
+body {
+    font-family: "Poppins", serif;
+    font-size: 1.6rem;
+    color: var(--color-3);
+}
+
+h1 {
+    font-size: 4.5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* navigation bar */
+
+.nav-bar {
+    width: 100%;
+    background: linear-gradient(45deg, var(--color-1), var(--color-2));
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+}
+
+.nav-bar h2 {
+    width: 20%;
+    font-size: 2rem;
+    text-align: right;
+}
+
+.nav-bar nav {
+    width: 80%;
+    height: 100%;
+    padding: 0.5rem 0;
+}
+
+.nav-bar nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+.nav-bar a {
+    background-color: var(--color-3);
+    text-decoration: none;
+    color: var(--color-2);
+    font-weight: bold;
+    padding: 1rem;
+    border-radius: 3px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-bar a:hover {
+    transform: scale(1.05);
+}
+
+/* welcome section */
+
+.welcome {
+    height: calc(100vh);
+    background: var(--color-3);
+    display: block;
+    align-content: center;
+    width: 100%;
+}
+
+.welcome h1 {
+    display: flex;
+    justify-content: center;
+    color: var(--color-1);
+    text-align: center;
+}
+
+.welcome h2 {
+    display: flex;
+    justify-content: center;
+    font-weight: 300;
+    color: var(--color-2);
+    text-align: center;
+}
+
+/* projects section */
+
+.projects-section {
+    width: 100%;
+    background-color: rgb(117, 82, 36);
+    padding: 10rem 2rem;
+    text-align: center;
+}
+
+.projects-header {
+    margin-bottom: 6rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-gap: 4rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+
+}
+
+@media (max-width: 30.625em) {
+    .projects-section {
+      padding: 6rem 1rem;
+    }
+  
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+}
+
+.project-tile {
+    background-color: var(--color-3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-image {
+    width: 100%;
+}
+
+.project-title {
+    color: var(--color-2);
+    font-weight: bold;
+    background-color: var(--color-3);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.project-tile:hover {
+    transform: scale(1.1);
+    z-index: 0;
+}
+
+/* contacts section */
+
+.contacts {
+    width: 100%;
+    padding: 10rem;
+}
+
+.contacts h2 {
+    color: var(--color-1);
+    text-align: center;
+    margin: 2rem;
+}
+
+.contacts a {
+    margin: 5rem;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.git-logo {
+    width: 100px;
+}
+
+/* miscellanious media queries */
+
+/* max-width was trial and error */
+@media (max-width: 41em) {
+    .nav-bar h2 {
+        text-align: center;
+    
+    }
+}
+
+@media (max-width: 400px) {
+    .nav-bar h2 {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+}
